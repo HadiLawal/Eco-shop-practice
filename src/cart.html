@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO Shop | Shopping Made Easy</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="./media/Logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2bac095a3f.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-[#f7f8f4] text-[#172033] font-[Inter]">
+
+    <!-- INFO -->
+    <p class="bg-[#668c4a] text-center text-white py-1.5 text-[12px] md:text-2xl lg:text-[15px] ">Free Shipping with
+        minimum purchase Rp250.000</p>
+
+    <!-- Header and Nav Bars Section -->
+    <header
+        class="px-3 py-2.5 flex justify-between gap-2.5 border border-b-[#668c4a] md:gap-5 md:px-3.5 md:py-5 lg:gap-10 lg:px-12 lg:py-7 sticky relative z-[1000] top-0 bg-white">
+        <a href="../index.html">
+            <img src="./media/Logo.png" alt="logo" class="w-15 md:w-35">
+        </a>
+
+        <div class=" md:w-[80%] lg:w-[50%]">
+            <div>
+                <form id="site-search-form" class="border border-gray-400 rounded-2xl px-1.5 py-1.5 flex gap-2.5">
+                    <button type="submit" class="py-1">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input id="site-search-input" type="text" placeholder="Search here....."
+                        class="outline-none border-none w-full">
+                </form>
+            </div>
+
+            <nav class="hidden lg:flex lg:pt-10 lg:gap-5 mx-auto lg:font-semibold lg:text-[15px] lg:justify-center">
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./new.html">NEW!</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./clothing.html">Clothing</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./bath.html">Bath</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./bedding.html">Bedding</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./homesgood.html">HomeGoods</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./furniture.html">Furniture</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./footwear.html">Footwear</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./accessories.html">Accessories</a>
+                <a class="md:hover:text-white md:hover:bg-[#668c4a] md:p-0.5 lg:p-1 transition-all cursor-pointer"
+                    href="./categories.html">Categories</a>
+            </nav>
+
+
+            <nav id="mobileNav"
+                class="lg:hidden flex flex-col gap-3 fixed top-25 md:top-50 right-3 z-[999] w-[220px] bg-white rounded-lg shadow-2xl p-5 text-black font-semibold transform translate-x-[120%] transition-transform duration-300 ease-in-out h-[100vh]">
+                <a class="hover:text-[#668c4a]" href="./output.css">NEW!</a>
+                <a class="hover:text-[#668c4a]" href="./clothing.html">Clothing</a>
+                <a class="hover:text-[#668c4a]" href="./bath.html">Bath</a>
+                <a class="hover:text-[#668c4a]" href="./bedding.html">Bedding</a>
+                <a class="hover:text-[#668c4a]" href="./homesgood.html">Home-Goods</a>
+                <a class="hover:text-[#668c4a]" href="./furniture.html">Furniture</a>
+                <a class="hover:text-[#668c4a]" href="./footwear.html">Footwear</a>
+                <a class="hover:text-[#668c4a]" href="./accessories.html">Accessories</a>
+                <a class="hover:text-[#668c4a]" href="./profile.html">Account</a>
+                <a class="hover:text-[#668c4a]" href="./categories.html">Categories</a>
+
+        </div>
+        </nav>
+        </div>
+
+        <div
+            class=" flex gap-2 justify-center items-center text-2xl md:flex-col md:gap-8 md:font-light lg:gap-8 lg:flex-row cursor-pointer">
+            <a href="./profile.html" class="hidden lg:block">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="./cart.html" class="relative">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count"
+                    class="absolute -top-3 -right-3 hidden w-5 h-5 bg-[#668c4a] text-white text-xs rounded-full items-center justify-center">
+                    0
+                </span>
+            </a>
+            <div class=" block lg:hidden"><i id="menuBtn" class="fa-solid fa-bars cursor-pointer"></i></div>
+
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 py-10 md:py-16">
+
+        <section class="mb-10">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+
+                <div>
+                    <h1 class="font-bold text-3xl md:text-5xl">
+                        Your Cart
+                    </h1>
+
+                    <p class="text-gray-500 mt-3">
+                        Review the products you've selected before checkout.
+                    </p>
+                </div>
+
+                <span id="cart-item-count" class="text-sm text-gray-500">
+                    0 Items
+                </span>
+
+            </div>
+
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
+
+            <section class="space-y-4">
+
+                <div
+                    class="hidden md:grid grid-cols-[2fr_1fr_1fr_40px] items-center px-6 text-xs uppercase tracking-wider text-gray-400 font-semibold">
+                    <span>Product</span>
+                    <span>Price</span>
+                    <span>Quantity</span>
+                    <span></span>
+                </div>
+
+                <div id="cart-container" class="space-y-4">
+                </div>
+
+                <div class="pt-4">
+                    <a href="./categories.html"
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-[#668c4a] hover:gap-3 transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Continue Shopping
+                    </a>
+                </div>
+
+            </section>
+
+            <aside class="bg-white border border-gray-200 rounded-2xl p-6 md:p-7 lg:sticky lg:top-5">
+
+                <div class="flex items-center justify-between mb-7">
+                    <h2 class="font-bold text-xl">
+                        Order Summary
+                    </h2>
+
+                    <i class="fa-solid fa-receipt text-[#668c4a]"></i>
+                </div>
+
+                <div class="space-y-5">
+
+                    <div class="flex justify-between gap-5 text-sm">
+                        <span class="text-gray-500">
+                            Subtotal
+                        </span>
+
+                        <span id="cart-subtotal" class="font-medium">
+                            Rp0
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between gap-5 text-sm">
+                        <span class="text-gray-500">
+                            Shipping
+                        </span>
+
+                        <span id="cart-shipping" class="font-medium">
+                            Rp0
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between gap-5 text-sm">
+                        <span class="text-gray-500">
+                            Discount
+                        </span>
+
+                        <span id="cart-discount" class="font-medium text-[#668c4a]">
+                            -Rp0
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="border-t border-dashed border-gray-300 my-6"></div>
+
+                <div class="flex justify-between items-end gap-5">
+                    <div>
+                        <p class="text-sm text-gray-500">
+                            Total
+                        </p>
+
+                        <p class="text-xs text-gray-400 mt-1">
+                            Including shipping
+                        </p>
+                    </div>
+
+                    <span id="cart-total" class="font-bold text-xl md:text-2xl">
+                        Rp0
+                    </span>
+                </div>
+
+                <a href="./checkout.html"
+                    class="mt-7 w-full bg-[#668c4a] hover:bg-[#55763c] text-white rounded-xl py-4 flex items-center justify-center gap-3 font-semibold transition">
+                    Proceed to Checkout
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="mt-5 flex items-center justify-center gap-2 text-xs text-gray-400">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure and protected checkout
+                </div>
+
+            </aside>
+
+        </div>
+
+        <section
+            class="mt-12 bg-[#edf3e8] rounded-2xl px-6 py-7 md:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+
+            <div>
+                <h2 class="font-bold text-lg">
+                    Shopping sustainably feels good.
+                </h2>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    Thank you for choosing products that are better for our planet.
+                </p>
+            </div>
+
+            <i class="fa-solid fa-leaf text-[#668c4a] text-4xl"></i>
+
+        </section>
+
+    </main>
+
+    <footer
+        class="relative min-h-[650px] bg-[url('./media/footer-bg.png')] bg-cover bg-center bg-no-repeat px-5 pt-20 pb-24 md:min-h-[600px] md:px-10 md:pt-24 md:pb-20 lg:px-16 lg:bg-auto relative">
+
+        <img src="./media/badge.png" alt="Eco Shop"
+            class="absolute top-10 left-1/2 -translate-x-1/2 w-20 h-20 md:top-[40px] md:w-24 md:h-24 lg:top-[40px]">
+
+
+        <div class="mx-auto grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-8 lg:gap-16 py-20 lg:pt-30 md:py-32 ">
+
+            <div class="flex flex-col gap-2">
+                <h4 class="text-[#668c4a] font-semibold text-base md:text-lg">Eco Shop</h4>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">About Us</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Contact Us</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">FAQs</p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <h4 class="text-[#668c4a] font-semibold text-base md:text-lg">Product Categories</h4>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">New</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Clothing</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Bath & Bedding</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Home Goods</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Furniture</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Accessories</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Gift</p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <h4 class="text-[#668c4a] font-semibold text-base md:text-lg">Support</h4>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Shipping</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Returns</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Privacy Policy</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Terms of Use</p>
+                <p class="text-sm hover:text-[#668c4a] md:text-base">Affiliates</p>
+            </div>
+
+            <div>
+                <h4 class="text-[#668c4a] font-semibold text-base md:text-lg mb-3">Payment</h4>
+
+                <div class="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-3 lg:grid-cols-4">
+
+                    <img src="./media/bca.png" alt="BCA" class="w-full h-8 object-contain">
+                    <img src="./media/mandiri.png" alt="Mandiri" class="w-full h-8 object-contain">
+                    <img src="./media/bni.png" alt="BNI" class="w-full h-8 object-contain">
+                    <img src="./media/BRI.png" alt="BRI" class="w-full h-8 object-contain">
+                    <img src="./media/Bank Syariah Indonesia.png" alt="Syariah" class="w-full h-8 object-contain">
+                    <img src="./media/mega.png" alt="Mega" class="w-full h-8 object-contain">
+                    <img src="./media/maybank.png" alt="Maybank" class="w-full h-8 object-contain">
+                    <img src="./media/gopay.png" alt="GoPay" class="w-full h-8 object-contain">
+                    <img src="./media/shopeepay.png" alt="ShopeePay" class="w-full h-8 object-contain">
+                    <img src="./media/dana.jpg" alt="Dana" class="w-full h-8 object-contain">
+                    <img src="./media/visa.png" alt="Visa" class="w-full h-8 object-contain">
+                    <img src="./media/mastercard.png" alt="Mastercard" class="w-full h-8 object-contain">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            class="absolute bottom-0 left-0 w-full border-t border-black/40 px-5 py-4 flex flex-col gap-4 md:flex-row md:justify-between md:items-center md:px-10 lg:px-16">
+
+            <small class="text-xs md:text-sm">© 2023 Eco Shop Indonesia. All Rights Reserved.</small>
+
+            <div class="flex gap-3">
+                <a href="https://wa.me/2348142184457" target="_blank">
+                    <img src="./media/Social Media.jpg" alt="" class="w-8 h-8 md:w-9 md:h-9 rounded-full">
+                </a>
+                <a href="https://www.tiktok.com/@ecoshopmalaysia" target="_blank">
+                    <img src="./media/Social Media (1).jpg" alt="" class="w-8 h-8 md:w-9 md:h-9 rounded-full">
+                </a>
+                <a href="https://www.instagram.com/the_eco_nigerian/" target="_blank">
+                    <img src="./media/Social Media (2).jpg" alt="" class="w-8 h-8 md:w-9 md:h-9 rounded-full">
+                </a>
+                <a href="https://www.facebook.com/theeconigerian/photos/" target="_blank">
+                    <img src="./media/Social Media (3).jpg" alt="" class="w-8 h-8 md:w-9 md:h-9 rounded-full">
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="./cart.js"></script>
+
+</body>
+
+</html>

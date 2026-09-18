@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@keyframes marquee {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.clothing-marquee {
+    width: max-content;
+    animation: marquee 8s linear infinite;
+}
+
+body{
+    scroll-behavior: smooth;
+}
