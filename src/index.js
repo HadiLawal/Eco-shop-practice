@@ -24,6 +24,8 @@ if (menuBtn && mobileNav) {
   });
 }
 
+// LOCAL NEW ARRIVAL PRODUCTS
+
 const localChairs = [
   {
     id: "local-chair-1",
@@ -67,6 +69,51 @@ const localChairs = [
   },
 ];
 
+// LANDING PAGE PRODUCTS
+
+const landingProducts = [
+  {
+    id: "local-wanted-1",
+    title: "Alpine Provision | Cedar + Sandalwood Hand Soap",
+    price: 99900,
+    image: "./src/media/1.png",
+    stock: 10,
+    brand: "Eco-Shop",
+    category: "bath",
+    isLocal: true,
+  },
+  {
+    id: "local-wanted-2",
+    title: "Woman's Classic Sole Low Back Wool Slippers",
+    price: 79900,
+    image: "./src/media/Product Image.png",
+    stock: 10,
+    brand: "Eco-Shop",
+    category: "footwear",
+    isLocal: true,
+  },
+  {
+    id: "local-wanted-3",
+    title: "Large Patterned Hamper Basket",
+    price: 199900,
+    image: "./src/media/3.png",
+    stock: 10,
+    brand: "Eco-Shop",
+    category: "home-decoration",
+    isLocal: true,
+  },
+  {
+    id: "local-wanted-4",
+    title: "Meliora | Eco Laundry Powder",
+    price: 159900,
+    image: "./src/media/4.png",
+    stock: 10,
+    brand: "Eco-Shop",
+    category: "home-decoration",
+    isLocal: true,
+  },
+];
+
 let allChairs = [];
 
 let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
@@ -90,7 +137,7 @@ const extraContainer = document.getElementById("extra-rows");
 // UPDATE CART COUNT
 
 function updateCartCount() {
-  const cartCount = document.getElementById("cart-count");
+  const cartCount = document.getElementById("cart-count-badge");
 
   if (!cartCount) {
     return;
@@ -121,7 +168,9 @@ function saveCart() {
 // ADD PRODUCT TO CART
 
 function addProductToCart(product) {
-  const existingProduct = cart.find((item) => item.id === product.id);
+  const existingProduct = cart.find(
+    (item) => String(item.id) === String(product.id),
+  );
 
   if (existingProduct) {
     if (existingProduct.quantity < existingProduct.stock) {
@@ -145,6 +194,39 @@ function addProductToCart(product) {
   saveCart();
 
   updateCartCount();
+}
+
+// CONNECT LANDING PAGE ADD TO CART BUTTONS
+
+function connectLandingCartButtons() {
+  const buttons = document.querySelectorAll("[data-landing-cart]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      const productId = button.dataset.landingCart;
+
+      const product = landingProducts.find(
+        (item) => String(item.id) === String(productId),
+      );
+
+      if (!product) {
+        return;
+      }
+
+      addProductToCart(product);
+
+      button.innerHTML = `
+        <i class="fa-solid fa-check mr-2"></i>
+        Added
+      `;
+
+      setTimeout(() => {
+        button.innerHTML = "Add to Cart";
+      }, 1000);
+    });
+  });
 }
 
 // PRODUCT CARD HTML
@@ -482,6 +564,46 @@ if (searchForm) {
 
 loadChairs();
 
+// CONNECT LANDING PAGE BUTTONS
+
+connectLandingCartButtons();
+
 // INITIAL CART COUNT
 
 updateCartCount();
+
+document.getElementById("new-arrivals").addEventListener("click", function (e) {
+  const button = e.target.closest(".add-to-cart");
+
+  if (!button) return;
+
+  const product = {
+    id: button.dataset.id,
+    title: button.dataset.title,
+    price: Number(button.dataset.price),
+    image: button.dataset.image,
+    quantity: 1,
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existingProduct = cart.find(
+    (item) => String(item.id) === String(product.id),
+  );
+
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCartBadge();
+
+  button.textContent = "Added ✓";
+
+  setTimeout(() => {
+    button.textContent = "Add to Cart";
+  }, 1000);
+});
